@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Easy Alumni Flyer</title>
+    <style>
+        :root {
+            /* Colores extraídos del logo */
+            --logo-dark: #545658; /* Gris oscuro del texto "speak" */
+            --logo-teal: #9ED8DB; /* Azul teal de la burbuja */
+            --logo-orange: #FF9A52; /* Naranja de la burbuja */
+            --primary: var(--logo-teal);
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --gray: #64748B;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #E2E8F0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .flyer-container {
+            background-color: #FFFFFF;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .header {
+            background-color: #FFFFFF; 
+            text-align: center;
+            padding: 30px 20px 15px 20px; 
+            border-bottom: 4px solid var(--logo-teal);
+        }
+
+        .logo-container {
+            width: 280px;
+            margin: 0 auto 10px auto;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header .small-text {
+            margin: 0;
+            font-size: 14px;
+            color: var(--logo-dark);
+            font-weight: 600;
+            text-transform: lowercase;
+            display: block;
+        }
+
+        .header .large-text {
+            margin: 2px 0 0 0; 
+            font-size: 24px;
+            color: var(--logo-dark);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .content {
+            padding: 20px 25px 25px 25px; 
+        }
+
+        .intro {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px; 
+            color: var(--dark);
+        }
+
+        .section-title {
+            background-color: var(--logo-teal);
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 10px 0 15px 0; 
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-list span {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .essence-box {
+            background-color: #F1F5F9;
+            border-left: 4px solid var(--logo-teal);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .gift-section {
+            background-color: #FFF7ED;
+            border: 2px dashed var(--logo-orange);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .gift-title {
+            color: white;
+            background-color: var(--logo-orange);
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -35px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .gift-subtitle {
+            text-align: center; 
+            font-size: 14px; 
+            margin-top: 0; 
+            margin-bottom: 20px;
+            color: var(--logo-dark);
+            font-weight: 500;
+        }
+
+        .assessment-highlight {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: var(--logo-dark);
+            text-align: center;
+            margin-bottom: 15px;
+            border: 1px solid var(--logo-teal);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pricing-table {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid var(--logo-orange);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pack-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--logo-dark);
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .new-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .savings-badge {
+            background-color: #10B981;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-top: 8px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--logo-dark);
+            padding-bottom: 10px;
+        }
+
+        .footer-note .liberar {
+            font-size: 20px;
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flyer-container">
+        <!-- Encabezado con Logo -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="data:image/jpeg;base64,{img_data}" alt="Speak Easy Logo">
+            </div>
+            <span class="small-text">toc, toc, toc...</span>
+            <span class="large-text">¡SOY YO, TU INGLÉS INTERIOR!</span>
+        </div>
+
+        <div class="content">
+            <!-- Introducción -->
+            <div class="intro">
+                <strong>🚀 Querido Speak Easy Alumni,</strong><br><br>
+                Quiero saludarte y agradecerte por haber confiado en nosotros en años anteriores. Este 2026 venimos renovados y <strong>queremos seguir siendo parte de tus sueños</strong>. Dominar el inglés te abrirá puertas increíbles y ¡estamos listos para acompañarte!
+            </div>
+
+            <!-- Novedades -->
+            <div class="section-title">✨ ¿Qué hay de nuevo?</div>
+            <ul class="feature-list">
+                <li>
+                    <span>📅</span>
+                    <div><strong>Agendamiento libre:</strong> Enlace directo a nuestro calendario para programar tus sesiones cuando tú quieras.</div>
+                </li>
+                <li>
+                    <span>☁️</span>
+                    <div><strong>Progreso en la nube:</strong> Carpeta virtual exclusiva con todos tus materiales de clase para que repases los temas de tus clases de forma ordenada.</div>
+                </li>
+                <li>
+                    <span>👨‍🏫</span>
+                    <div><strong>Disponibilidad total:</strong> Horarios desde muy temprano hasta tarde, ¡incluyendo fines de semana!</div>
+                </li>
+            </ul>
+
+            <!-- Esencia -->
+            <div class="essence-box">
+                💬 <strong>Mantenemos nuestra esencia:</strong> Clases 1 a 1 de 50 minutos, dirigidas a tu fluidez conversacional y enfocadas en la práctica real.
+            </div>
+
+            <!-- Sección de Regalos -->
+            <div class="gift-section">
+                <h2 class="gift-title">🎁 Regalos Speak Easy Alumni</h2>
+                <p class="gift-subtitle">Especialmente diseñados para tu regreso:</p>
+                
+                <div class="assessment-highlight">
+                    1️⃣ Sesión de Assessment<br>
+                    <span style="font-size: 12px; font-weight: normal; color: #475569; display: block; margin-top: 5px;">Sólo para Speak Easy Alumni, te <strong>regalamos</strong> una sesión de 30 minutos para conocer tus conocimientos actuales y dibujar tu <strong>"Mapa al Inglés"</strong> para navegarlo juntos.</span>
+                </div>
+
+                <div style="font-weight: bold; margin-bottom: 12px; color: var(--logo-dark); padding-left: 5px;">2️⃣ Tus Descuentos Exclusivos:</div>
+                
+                <div class="pricing-table">
+                    <!-- Pack 12 -->
+                    <div class="price-card">
+                        <div class="pack-name">Pack 12 clases</div>
+                        <div class="price-row">
+                            <span class="old-price">$779.000</span>
+                            <span class="new-price">$679.000</span>
+                        </div>
+                        <div class="savings-badge">Ahorras $100.000</div>
+                    </div>
+
+                    <!-- Pack 24 -->
+                    <div class="price-card">
+                        <div class="pack-name">Pack 24 clases</div>
+                        <div class="price-row">
+                            <span class="old-price">$1.399.000</span>
+                            <span class="new-price">$1.259.000</span>
+                        </div>
+                        <div class="savings-badge">Ahorras $140.000</div>
+                    </div>
+
+                    <!-- Pack 48 -->
+                    <div class="price-card">
+                        <div class="pack-name">Pack 48 clases</div>
+                        <div class="price-row">
+                            <span class="old-price">$2.399.000</span>
+                            <span class="new-price">$2.090.000</span>
+                        </div>
+                        <div class="savings-badge">Ahorras $309.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                Si no es ahora, ¿cuándo?<br>
+                Este es el momento perfecto para
+                <span class="liberar">¡liberar tu inglés interior!💬</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
