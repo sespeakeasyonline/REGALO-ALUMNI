@@ -77,18 +77,30 @@
         .content {
             padding: 30px 20px; /* Ajustado para móviles */
             color: var(--dark);
+            overflow: hidden;
+        }
+
+        /* FONDO AZUL TEAL DE LADO A LADO */
+        .intro-wrapper {
+            background-color: var(--logo-teal);
+            margin: -30px -20px 30px -20px; /* Se expande hacia los bordes del contenedor principal */
+            padding: 30px 20px;
+            color: var(--logo-dark); /* Color de texto oscuro para que resalte sobre el azul claro */
         }
 
         .intro {
             font-size: 17px;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin: 0;
             text-align: center;
         }
 
         .highlight {
-            color: var(--logo-orange);
-            font-weight: bold;
+            color: white; /* Texto blanco */
+            background-color: var(--logo-orange); /* Fondo naranja del logo */
+            font-weight: bold; /* Negrita */
+            padding: 2px 6px;
+            border-radius: 4px;
         }
 
         /* Beneficios - Optimizado para celular */
@@ -283,10 +295,13 @@
         </div>
 
         <div class="content">
-            <p class="intro">
-                <strong>🚀 Querido Speak Easy Alumni,</strong><br><br>
-                Quiero saludarte y agradecerte por haber confiado en nosotros en años anteriores. Llevo en mi corazón la gratitud por haberme permitido ser tu guía y cómplice en ese bonito proceso de crecimiento para ser tú mism@ en inglés. Quiero contarte que este 2026 venimos renovados y <span class="highlight">queremos seguir siendo parte de tus sueños</span>. Dominar el inglés te abrirá puertas increíbles y ¡estamos listos para acompañarte!
-            </p>
+            <!-- Bloque de introducción con fondo azul teal de lado a lado -->
+            <div class="intro-wrapper">
+                <p class="intro">
+                    <strong>🚀 Querido Speak Easy Alumni,</strong><br><br>
+                    Quiero saludarte y agradecerte por haber confiado en nosotros en años anteriores. Llevo en mi corazón la gratitud por haberme permitido ser tu guía y cómplice en ese bonito proceso de crecimiento para ser tú mism@ en inglés. Quiero contarte que este 2026 venimos renovados y <span class="highlight">queremos seguir siendo parte de tus sueños</span>. Dominar el inglés te abrirá puertas increíbles y ¡estamos listos para acompañarte!
+                </p>
+            </div>
 
             <h3 style="text-align: center; color: var(--logo-dark);">✨ ¿Qué hay de nuevo?</h3>
             <div class="benefits">
