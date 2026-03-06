@@ -1,388 +1,377 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speak Easy Alumni Flyer</title>
-<style>
-:root {
-/* Colores extraídos del logo */
---logo-dark: #545658; /* Gris oscuro del texto "speak" */
---logo-teal: #9ED8DB; /* Azul teal de la burbuja */
---logo-orange: #FF9A52; /* Naranja de la burbuja */
---primary: var(--logo-teal);
---dark: #1E293B;
---light: #F8FAFC;
---gray: #64748B;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Easy Alumni Flyer</title>
+    <style>
+        :root {
+            /* Colores extraídos del logo */
+            --logo-dark: #545658; /* Gris oscuro del texto "speak" */
+            --logo-teal: #9ED8DB; /* Azul teal de la burbuja */
+            --logo-orange: #FF9A52; /* Naranja de la burbuja */
+            --primary: var(--logo-teal);
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --gray: #64748B;
+        }
 
-body {
-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-background-color: #E2E8F0;
-margin: 0;
-padding: 20px;
-display: flex;
-justify-content: center;
-align-items: flex-start;
-min-height: 100vh;
-}
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #E2E8F0;
+            margin: 0;
+            padding: 10px; /* Reducido para móviles */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
 
-.flyer-container {
-background: white;
-width: 100%;
-max-width: 800px;
-border-radius: 20px;
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-overflow: hidden;
-}
+        .flyer-container {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
 
-.header {
-background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-color: white;
-text-align: center;
-padding: 40px 20px;
-position: relative;
-}
+        .header {
+            background: white; /* Cambiado de azul a blanco */
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            position: relative;
+        }
 
-/* Contenedor del logo real */
-.logo-container {
-max-width: 250px;
-margin: 0 auto 20px auto;
-background: white;
-padding: 15px;
-border-radius: 15px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+        /* Contenedor del logo real - Más grande y limpio */
+        .logo-container {
+            max-width: 320px; /* Aumentado tamaño */
+            margin: 0 auto 15px auto;
+            background: transparent;
+            padding: 0;
+        }
 
-.logo-container img {
-width: 100%;
-height: auto;
-display: block;
-}
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-.header::after {
-content: '';
-position: absolute;
-bottom: -20px;
-left: 0;
-right: 0;
-height: 40px;
-background: white;
-transform: skewY(-2deg);
-}
+        .small-text {
+            display: block;
+            font-size: 18px;
+            color: var(--logo-teal); /* Color teal solicitado */
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
 
-.small-text {
-display: block;
-font-size: 18px;
-color: var(--logo-teal);
-margin-bottom: 5px;
-}
+        .large-text {
+            display: block;
+            font-size: 28px; /* Ajustado para móviles */
+            font-weight: 800;
+            color: var(--logo-teal); /* Color teal solicitado */
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
 
-.large-text {
-font-size: 32px;
-font-weight: 800;
-color: var(--logo-orange);
-letter-spacing: 1px;
-}
+        .content {
+            padding: 30px 20px; /* Ajustado para móviles */
+            color: var(--dark);
+        }
 
-.content {
-padding: 40px;
-color: var(--dark);
-}
+        .intro {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-.intro {
-font-size: 18px;
-line-height: 1.6;
-margin-bottom: 30px;
-text-align: center;
-}
+        .highlight {
+            color: var(--logo-orange);
+            font-weight: bold;
+        }
 
-.highlight {
-color: var(--logo-orange);
-font-weight: bold;
-}
+        /* Beneficios - Optimizado para celular */
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr; /* Por defecto 1 columna */
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-/* Beneficios */
-.benefits {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
-margin-bottom: 40px;
-}
+        @media (min-width: 600px) {
+            .benefits {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+            }
+            .large-text {
+                font-size: 32px;
+            }
+        }
 
-.benefit-card {
-background: var(--light);
-padding: 20px;
-border-radius: 12px;
-border-left: 4px solid var(--logo-teal);
-transition: transform 0.3s ease;
-}
+        .benefit-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--logo-teal);
+        }
 
-.benefit-card:hover {
-transform: translateY(-5px);
-}
+        .benefit-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--dark);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.benefit-card h3 {
-margin: 0 0 10px 0;
-color: var(--dark);
-font-size: 18px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
+        .benefit-card p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
-.benefit-card p {
-margin: 0;
-color: var(--gray);
-font-size: 15px;
-line-height: 1.5;
-}
+        /* Sección de Regalos */
+        .gift-section {
+            background: linear-gradient(135deg, rgba(158, 216, 219, 0.1) 0%, rgba(255, 154, 82, 0.1) 100%);
+            border: 2px dashed var(--logo-teal);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 40px;
+        }
 
-/* Sección de Regalos */
-.gift-section {
-background: linear-gradient(135deg, rgba(158, 216, 219, 0.1) 0%, rgba(255, 154, 82, 0.1) 100%);
-border: 2px dashed var(--logo-teal);
-border-radius: 15px;
-padding: 30px;
-margin-top: 40px;
-}
+        .gift-title {
+            text-align: center;
+            color: var(--logo-orange);
+            font-size: 24px;
+            margin: 0 0 20px 0;
+        }
 
-.gift-title {
-text-align: center;
-color: var(--logo-orange);
-font-size: 24px;
-margin: 0 0 20px 0;
-}
+        .gift-item {
+            margin-bottom: 25px;
+        }
 
-.gift-item {
-margin-bottom: 25px;
-}
+        .gift-item h4 {
+            margin: 0 0 10px 0;
+            color: var(--dark);
+            font-size: 18px;
+        }
 
-.gift-item h4 {
-margin: 0 0 10px 0;
-color: var(--dark);
-font-size: 18px;
-}
+        /* Precios - Optimizado para celular */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna en móvil */
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-.gift-item p {
-margin: 0;
-color: var(--gray);
-line-height: 1.5;
-}
+        @media (min-width: 700px) {
+            .price-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+            }
+        }
 
-/* Precios */
-.price-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 15px;
-margin-top: 20px;
-}
+        .price-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #E2E8F0;
+            position: relative;
+        }
 
-.price-card {
-background: white;
-padding: 15px;
-border-radius: 10px;
-text-align: center;
-border: 1px solid #E2E8F0;
-position: relative;
-}
+        .price-card.best-value {
+            border: 2px solid var(--logo-orange);
+            box-shadow: 0 10px 15px rgba(255, 154, 82, 0.2);
+            z-index: 1;
+        }
 
-/* Destacar la mejor opción */
-.price-card.best-value {
-border: 2px solid var(--logo-orange);
-transform: scale(1.05);
-box-shadow: 0 10px 15px rgba(255, 154, 82, 0.2);
-z-index: 1;
-}
+        .best-value-badge {
+            background: var(--logo-orange);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
 
-.best-value-badge {
-background: var(--logo-orange);
-color: white;
-font-size: 12px;
-font-weight: bold;
-padding: 4px 10px;
-border-radius: 20px;
-position: absolute;
-top: -12px;
-left: 50%;
-transform: translateX(-50%);
-white-space: nowrap;
-}
+        .pack-name {
+            font-weight: bold;
+            color: var(--logo-dark);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-.pack-name {
-font-weight: bold;
-color: var(--logo-dark);
-margin-bottom: 10px;
-font-size: 15px;
-}
+        .old-price {
+            text-decoration: line-through;
+            color: #94A3B8;
+            font-size: 14px;
+        }
 
-.old-price {
-text-decoration: line-through;
-color: #94A3B8;
-font-size: 14px;
-}
+        .new-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--logo-orange);
+            margin: 5px 0;
+        }
 
-.new-price {
-font-size: 22px;
-font-weight: 800;
-color: var(--logo-orange);
-margin: 5px 0;
-}
+        .savings {
+            color: var(--logo-teal);
+            font-weight: bold;
+            font-size: 13px;
+            background: rgba(158, 216, 219, 0.1);
+            padding: 4px 8px;
+            border-radius: 10px;
+            display: inline-block;
+        }
 
-.savings {
-color: var(--logo-teal);
-font-weight: bold;
-font-size: 13px;
-background: rgba(158, 216, 219, 0.1);
-padding: 4px 8px;
-border-radius: 10px;
-display: inline-block;
-}
+        .closing {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-.closing {
-text-align: center;
-margin-top: 40px;
-font-size: 18px;
-color: var(--dark);
-line-height: 1.6;
-}
+        .liberar {
+            color: var(--logo-orange);
+            font-size: 20px;
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+        }
 
-.liberar {
-color: var(--logo-orange);
-font-size: 20px;
-font-weight: 800;
-display: block;
-margin-top: 5px;
-}
+        .whatsapp-cta {
+            display: inline-block;
+            background-color: #25D366;
+            color: #ffffff !important;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            max-width: 90%;
+        }
 
-.whatsapp-cta {
-display: inline-block;
-background-color: #25D366;
-color: #ffffff !important;
-font-family: 'Helvetica Neue', Arial, sans-serif;
-font-size: 18px;
-font-weight: bold;
-text-align: center;
-text-decoration: none;
-padding: 16px 32px;
-border-radius: 50px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease;
-margin: 20px 0;
-}
-
-.whatsapp-cta:hover {
-background-color: #128C7E;
-transform: translateY(-2px);
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.cta-container {
-text-align: center;
-width: 100%;
-}
-
-</style>
+        .cta-container {
+            text-align: center;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="flyer-container">
-<!-- Encabezado con Logo -->
-<div class="header">
-<div class="logo-container">
-<img src="SPEAK EASY.png" alt="Speak Easy">
-</div>
-<span class="small-text">toc, toc, toc...</span>
-<span class="large-text">¡SOY YO, TU INGLÉS INTERIOR!</span>
-</div>
+    <div class="flyer-container">
+        <!-- Encabezado con Logo Blanco -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="SPEAK EASY.png" alt="Speak Easy">
+            </div>
+            <span class="small-text">toc, toc, toc...</span>
+            <span class="large-text">¡SOY YO, TU INGLÉS INTERIOR!</span>
+        </div>
 
-<div class="content">
-<p class="intro">
-<strong>🚀 Querido Speak Easy Alumni,</strong><br><br>
-Quiero saludarte y agradecerte por haber confiado en nosotros en años anteriores. Llevo en mi corazón la gratitud por haberme permitido ser tu guía y cómplice en ese bonito proceso de crecimiento para ser tú mism@ en inglés. Quiero contarte que este 2026 venimos renovados y <span class="highlight">queremos seguir siendo parte de tus sueños</span>. Dominar el inglés te abrirá puertas increíbles y ¡estamos listos para acompañarte!
-</p>
+        <div class="content">
+            <p class="intro">
+                <strong>🚀 Querido Speak Easy Alumni,</strong><br><br>
+                Quiero saludarte y agradecerte por haber confiado en nosotros en años anteriores. Llevo en mi corazón la gratitud por haberme permitido ser tu guía y cómplice en ese bonito proceso de crecimiento para ser tú mism@ en inglés. Quiero contarte que este 2026 venimos renovados y <span class="highlight">queremos seguir siendo parte de tus sueños</span>. Dominar el inglés te abrirá puertas increíbles y ¡estamos listos para acompañarte!
+            </p>
 
-<h3>✨ ¿Qué hay de nuevo?</h3>
-<div class="benefits">
-<div class="benefit-card">
-<h3>📅 Agendamiento optimizado</h3>
-<p>Enlace directo al calendario de tu profe para que puedas programar tus clases en cualquier momento.</p>
-</div>
-<div class="benefit-card">
-<h3>☁️ Tus contenidos siempre disponibles</h3>
-<p>Carpeta virtual exclusiva con todos tus materiales de clase para que repases los temas y hagas seguimiento de tu aprendizaje de forma ordenada.</p>
-</div>
-<div class="benefit-card">
-<h3>👨‍🏫 Disponibilidad total</h3>
-<p>Horarios para clases desde las 6:00am hasta las 8:00pm, ¡incluyendo los fines de semana!</p>
-</div>
-<div class="benefit-card">
-<h3>📋 Clases semanales abiertas</h3>
-<p>Libertad para agendar cuantas clases quieras y puedas en la semana, usando las clases disponibles en tu Pack.</p>
-</div>
-</div>
+            <h3 style="text-align: center; color: var(--logo-dark);">✨ ¿Qué hay de nuevo?</h3>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>📅 Agendamiento optimizado</h3>
+                    <p>Enlace directo al calendario de tu profe para que puedas programar tus clases en cualquier momento.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>☁️ Tus contenidos siempre disponibles</h3>
+                    <p>Carpeta virtual exclusiva con todos tus materiales de clase para que repases los temas y hagas seguimiento de tu aprendizaje de forma ordenada.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>👨‍🏫 Disponibilidad total</h3>
+                    <p>Horarios para clases desde las 6:00am hasta las 8:00pm, ¡incluyendo los fines de semana!</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>📋 Clases semanales abiertas</h3>
+                    <p>Libertad para agendar cuantas clases quieras y puedas en la semana, usando las clases disponibles en tu Pack.</p>
+                </div>
+            </div>
 
-<div style="text-align: center; margin-bottom: 20px;">
-💬 <strong>Eso sí, mantenemos nuestra esencia:</strong> Clases 1 a 1 de 50 minutos donde adquieres la confianza que necesitas; siempre dirigidas a tu fluidez conversacional y enfocadas en la práctica real.
-</div>
-<div class="cta-container">
-<a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="whatsapp-cta">
-Estoy list@ para retomar mis clases
-</a>
-</div>
-<!-- Sección de Regalos -->
-<div class="gift-section">
-<h2 class="gift-title">🎁 Regalos Speak Easy Alumni</h2>
+            <div style="text-align: center; margin-bottom: 20px; font-size: 15px;">
+                💬 <strong>Eso sí, mantenemos nuestra esencia:</strong> Clases 1 a 1 de 50 minutos donde adquieres la confianza que necesitas; siempre dirigidas a tu fluidez conversacional y enfocadas en la práctica real.
+            </div>
 
-<div class="gift-item">
-<h4>Regalo 1️⃣: Sesión de Assessment</h4>
-<p>Sólo para Speak Easy Alumni y para agradecerte por haber sido parte de nuestra Familia Speak Easy, te <strong>regalamos</strong> una sesión de 30 minutos para conocer tus habilidades actuales y entregarte tu <strong>"Mapa al Inglés"</strong> para navegarlo juntos en tus clases.</p>
-</div>
+            <div class="cta-container">
+                <a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="whatsapp-cta">
+                    Estoy list@ para retomar mis clases
+                </a>
+            </div>
 
-<div class="gift-item">
-<h4>Regalo 2️⃣: Tus Descuentos Exclusivos.</h4>
-<div class="price-grid">
-<!-- Pack 12 -->
-<div class="price-card">
-<div class="pack-name">Pack 12 clases</div>
-<div class="old-price">$779.000</div>
-<div class="new-price">$679.000</div>
-<div class="savings">Ahorras $100.000</div>
-</div>
+            <!-- Sección de Regalos -->
+            <div class="gift-section">
+                <h2 class="gift-title">🎁 Regalos Speak Easy Alumni</h2>
 
-<!-- Pack 24 (Destacado) -->
-<div class="price-card best-value">
-<div class="pack-name">Pack 24 clases</div>
-<div class="old-price">$1.399.000</div>
-<div class="new-price">$1.259.000</div>
-<div class="savings">Ahorras $140.000</div>
-</div>
+                <div class="gift-item">
+                    <h4>Regalo 1️⃣: Sesión de Assessment</h4>
+                    <p style="font-size: 14px; color: var(--gray);">Sólo para Speak Easy Alumni y para agradecerte por haber sido parte de nuestra Familia Speak Easy, te <strong>regalamos</strong> una sesión de 30 minutos para conocer tus habilidades actuales y entregarte tu <strong>"Mapa al Inglés"</strong> para navegarlo juntos en tus clases.</p>
+                </div>
 
-<!-- Pack 48 -->
-<div class="price-card">
-<div class="pack-name">Pack 48 clases</div>
-<div class="best-value-badge">Mejor Opción</div>
-<div class="old-price">$2.399.000</div>
-<div class="new-price">$2.090.000</div>
-<div class="savings">Ahorras $309.000</div>
-</div>
-</div>
-</div>
-</div>
+                <div class="gift-item">
+                    <h4>Regalo 2️⃣: Tus Descuentos Exclusivos.</h4>
+                    <div class="price-grid">
+                        <!-- Pack 12 -->
+                        <div class="price-card">
+                            <div class="pack-name">Pack 12 clases</div>
+                            <div class="old-price">$779.000</div>
+                            <div class="new-price">$679.000</div>
+                            <div class="savings">Ahorras $100.000</div>
+                        </div>
 
-<div class="closing">
-Si no es ahora, ¿cuándo?<br>
-Este es el momento perfecto para
-<span class="liberar">¡liberar tu inglés interior!💬</span>
-</div>
-<div class="cta-container">
-<a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="whatsapp-cta">
-QUIERO MI ASSESSMENT DE REGALO
-</a>
-</div>
-</div>
-</div>
+                        <!-- Pack 24 (Destacado) -->
+                        <div class="price-card best-value">
+                            <div class="best-value-badge">Más Popular</div>
+                            <div class="pack-name">Pack 24 clases</div>
+                            <div class="old-price">$1.399.000</div>
+                            <div class="new-price">$1.259.000</div>
+                            <div class="savings">Ahorras $140.000</div>
+                        </div>
+
+                        <!-- Pack 48 -->
+                        <div class="price-card">
+                            <div class="best-value-badge" style="background: var(--logo-teal);">Mejor Precio por Clase</div>
+                            <div class="pack-name">Pack 48 clases</div>
+                            <div class="old-price">$2.399.000</div>
+                            <div class="new-price">$2.090.000</div>
+                            <div class="savings">Ahorras $309.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="closing">
+                Si no es ahora, ¿cuándo?<br>
+                Este es el momento perfecto para
+                <span class="liberar">¡liberar tu inglés interior!💬</span>
+            </div>
+
+            <div class="cta-container">
+                <a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="whatsapp-cta">
+                    QUIERO MI ASSESSMENT DE REGALO
+                </a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
