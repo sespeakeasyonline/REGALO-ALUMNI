@@ -20,15 +20,15 @@
         
         /* Header */
         header { background-color: var(--blanco); padding: 15px 40px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; align-items: center; }
-        .logo-img { max-width: 250px; width: 100%; height: auto; }
+        .logo-img { width: 100%; max-width: 400px; height: auto; }
         
         /* Hero Section */
         .hero { background: linear-gradient(135deg, #FFFFFF 0%, var(--gris-claro) 100%); padding: 80px 40px; text-align: center; position: relative; overflow: hidden; }
-        .hero-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        .hero-content { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; width: 100%; }
         .pre-title { font-size: 16px; color: var(--naranja); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; }
         h1 { font-family: 'Quicksand', sans-serif; font-size: 48px; font-weight: 700; color: var(--gris-oscuro); line-height: 1.2; margin-bottom: 25px; }
         h1 .highlight { color: var(--celeste); font-weight: 800; }
-        .subtitle { font-size: 20px; color: var(--gris-oscuro); margin-bottom: 40px; line-height: 1.8; font-weight: 600; }
+        .subtitle { font-size: 20px; color: var(--gris-oscuro); margin-bottom: 40px; line-height: 1.8; font-weight: 600; max-width: 1200px; margin-left: auto; margin-right: auto; }
         
         /* Buttons */
         .btn { display: inline-block; padding: 18px 45px; font-size: 18px; font-weight: 800; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; font-family: 'Nunito', sans-serif; text-align: center; }
@@ -41,69 +41,85 @@
         .btn-outline:hover { background-color: var(--celeste); color: var(--blanco); }
 
         /* Typography & Layout */
-        section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+        section { padding: 80px 40px; max-width: 1400px; margin: 0 auto; width: 100%; }
         .section-tight { padding-top: 40px; padding-bottom: 40px; }
         h2 { font-family: 'Quicksand', sans-serif; font-size: 38px; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 30px; text-align: center; line-height: 1.3; }
         .text-center { text-align: center; }
         .mt-10 { margin-top: 10px; }
 
         /* Pain Points Section */
-        .pain-points { background-color: var(--blanco); border-radius: 25px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        .pain-item { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px dashed #E0E0E0; }
-        .pain-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .pain-points { background-color: var(--blanco); border-radius: 25px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); width: 100%; }
+        .pain-points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .pain-item { padding-bottom: 0; border-bottom: none; }
+        
+        /* Modificación para centrar el 3er elemento en Desktop */
+        @media (min-width: 769px) {
+            .pain-item:nth-child(3) {
+                grid-column: 1 / -1; /* Ocupa todo el ancho de la fila */
+                justify-self: center; /* Se centra horizontalmente */
+                max-width: 500px; /* Evita que se estire demasiado */
+                text-align: center; /* Centra el texto de ese item */
+            }
+        }
+        
         .pain-item h3 { font-family: 'Quicksand', sans-serif; color: var(--naranja); font-size: 24px; margin-bottom: 10px; font-weight: 700; }
-        .conclusion { font-size: 20px; font-weight: 700; text-align: center; margin-top: 40px; color: var(--celeste); }
+        .conclusion { font-size: 20px; font-weight: 700; text-align: center; margin-top: 40px; padding-top: 40px; border-top: 1px dashed #E0E0E0; color: var(--celeste); }
 
         /* Solution Section (Lista) */
-        .solution-list-container { max-width: 800px; margin: 40px auto 0; background-color: var(--blanco); border-radius: 20px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
-        .solution-list { list-style: none; }
-        .solution-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; font-size: 17px; }
-        .solution-list li:last-child { margin-bottom: 0; }
+        .solution-list-container { max-width: 1200px; margin: 40px auto 0; background-color: var(--blanco); border-radius: 20px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .solution-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
+        .solution-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 0; font-size: 17px; }
         .solution-list-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
         .solution-list-text strong { color: var(--celeste); font-family: 'Quicksand', sans-serif; font-size: 19px; display: block; margin-bottom: 5px; }
 
-        /* Programs Section - Corregido el padding inferior para quitar espacio blanco */
-        .programs { background-color: var(--gris-claro); padding: 60px 20px 20px 20px; }
-        .programs section { padding-bottom: 0; } /* Quitado padding inferior de la sección interna */
-        .program-card { background-color: var(--blanco); padding: 50px; border-radius: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s ease; }
-        .program-card:last-child { margin-bottom: 0; } /* Quitado el margen inferior a la última tarjeta */
+        /* Programs Section */
+        .programs { background-color: var(--gris-claro); padding: 60px 20px 20px 20px; width: 100%; }
+        .programs section { padding-bottom: 0; max-width: 1400px; }
+        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 1024px) {
+            .programs-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+            .program-card { margin-bottom: 0; }
+            .check-list-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+        .program-card { background-color: var(--blanco); padding: 40px; border-radius: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s ease; height: 100%; }
+        .program-card:last-child { margin-bottom: 0; }
         .program-card:hover { transform: translateY(-5px); }
-        .program-logo { max-width: 250px; height: auto; margin-bottom: 20px; }
+        .program-logo { max-width: 250px; width: 100%; height: auto; margin-bottom: 20px; }
         .program-subtitle { font-size: 20px; font-weight: 700; color: var(--naranja); margin-bottom: 25px; font-family: 'Quicksand', sans-serif; }
-        .program-details { text-align: left; width: 100%; max-width: 900px; }
+        .program-details { text-align: left; width: 100%; display: flex; flex-direction: column; flex-grow: 1; }
         .program-details > p { margin-bottom: 20px; font-size: 17px; text-align: center; }
         
         /* Grid de dos columnas para Para quién es / NO es */
-        .check-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background-color: #FAFAFA; padding: 30px; border-radius: 15px; }
+        .check-list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; background-color: #FAFAFA; padding: 25px; border-radius: 15px; margin-top: auto; }
         .check-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; }
         .check-item span { font-size: 20px; flex-shrink: 0; }
         .check-title { display: block; font-weight: 800; color: var(--gris-oscuro); margin-bottom: 5px; }
 
-        /* Assessment Section - Corregido padding superior */
+        /* Assessment Section */
         .assessment { text-align: center; padding-top: 40px; }
-        .assessment-box { background-color: var(--blanco); padding: 50px; border-radius: 25px; border: 3px dashed var(--celeste); max-width: 800px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(140,211,209,0.1); }
-        .assessment-list { text-align: left; margin: 30px auto; max-width: 600px; font-size: 18px; }
+        .assessment-box { background-color: var(--blanco); padding: 50px; border-radius: 25px; border: 3px dashed var(--celeste); max-width: 1000px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(140,211,209,0.1); width: 100%; }
+        .assessment-list { text-align: left; margin: 30px auto; max-width: 800px; font-size: 18px; }
         .assessment-list li { margin-bottom: 20px; list-style-type: none; position: relative; padding-left: 35px; font-weight: 600; }
         .assessment-list li::before { content: '✨'; position: absolute; left: 0; }
 
         /* About Us Section */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1400px; margin: 0 auto; }
         .about-text { text-align: left; }
         .about-text h3 { color: var(--naranja); font-family: 'Quicksand', sans-serif; margin-bottom: 10px; font-size: 22px; font-weight: 700; }
         .about-text p { margin-bottom: 25px; font-size: 17px; }
-        .about-image { width: 100%; border-radius: 25px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); object-fit: cover; }
+        .about-image { width: 100%; max-height: 600px; border-radius: 25px; box-shadow: 0 15px 30px rgba(0,0,0,0.08); object-fit: cover; }
 
         /* Testimonials Section */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .testimonial-card { background-color: var(--blanco); padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); position: relative; }
         .stars { color: var(--naranja); font-size: 22px; margin-bottom: 15px; }
         .testimonial-text { font-style: italic; margin-bottom: 20px; font-size: 17px; line-height: 1.7; }
         .testimonial-author { font-weight: 800; color: var(--celeste); font-family: 'Quicksand', sans-serif; font-size: 18px; }
 
         /* Footer Hook */
-        .footer-hook { background-color: var(--celeste); color: var(--blanco); padding: 80px 20px; text-align: center; border-top-left-radius: 40px; border-top-right-radius: 40px; margin-top: 40px; }
+        .footer-hook { background-color: var(--celeste); color: var(--blanco); padding: 80px 40px; text-align: center; border-top-left-radius: 40px; border-top-right-radius: 40px; margin-top: 40px; width: 100%; max-width: 1600px; margin-left: auto; margin-right: auto; }
         .footer-hook h2 { color: var(--blanco); margin-bottom: 20px; }
-        .footer-hook p { font-size: 20px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600; }
+        .footer-hook p { font-size: 20px; margin-bottom: 40px; max-width: 1000px; margin-left: auto; margin-right: auto; font-weight: 600; }
         .whatsapp-support { margin-top: 30px; display: inline-flex; align-items: center; gap: 10px; color: var(--blanco); text-decoration: none; font-weight: 800; font-size: 18px; }
         .whatsapp-support:hover { text-decoration: underline; }
 
@@ -115,10 +131,21 @@
         @media (max-width: 768px) {
             h1 { font-size: 34px; }
             h2 { font-size: 28px; }
+            section { padding: 50px 20px; }
+            .logo-img { max-width: 250px; } 
+            .pain-points { padding: 30px 20px; }
+            .pain-points-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            /* Restablecer centrado en móvil para que quede alineado a la izquierda como el resto */
+            .pain-item:nth-child(3) { max-width: 100%; text-align: left; }
+            
+            .pain-item { border-bottom: 1px dashed #E0E0E0; padding-bottom: 30px; }
+            .pain-item:last-child { border-bottom: none; padding-bottom: 0; }
             .check-list-grid { grid-template-columns: 1fr; gap: 20px; } 
-            .about-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
             .btn { width: 100%; }
-            .footer-hook { border-radius: 0; }
+            .footer-hook { border-radius: 0; padding: 50px 20px; }
+            .solution-list { grid-template-columns: 1fr; } 
             .solution-list-container { padding: 30px 20px; }
         }
     </style>
@@ -135,7 +162,7 @@
         <div class="hero-content">
             <p class="pre-title">El mundo está lleno de oportunidades. Que el idioma no sea lo que te detenga.</p>
             <h1><span class="highlight">Llegó el momento de liberar tu inglés interior:</span> Pierde el miedo, aprópiate del idioma y sé tú mismo al hablar.</h1>
-            <p class="subtitle">Programas de inglés 100% personalizados para profesionales y adultos. Deja de estudiar con videos dispersos online sin estructura y empieza a prepararte para la vida real, progresar en tu carrera y cumplir tus sueños.</p>
+            <p class="subtitle">Programas de inglés 100% personalizados para profesionales y adultos. Deja de “estudiar” viendo videos online sin estructura y empieza a prepararte para la vida real, progresar en tu carrera y cumplir tus sueños.</p>
             <a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Estoy <i>ready</i> para cumplir mis sueños</a>
         </div>
     </section>
@@ -144,32 +171,35 @@
     <section class="section-tight">
         <h2>¿Te suena familiar alguna de estas situaciones?</h2>
         <div class="pain-points">
-            <div class="pain-item">
-                <h3>El nudo en la garganta</h3>
-                <p>Entiendes las series de TV sin subtítulos y sabes qué te están diciendo en tus viajes, pero cuando te toca responder, te bloqueas, no encuentras las palabras y terminas diciendo solo "Yes" o "No".</p>
-                <a href="#levelup" class="btn btn-outline btn-small">Speak Easy Level Up es para tí</a>
+            <!-- Usando CSS Grid para Desktop en esta sección -->
+            <div class="pain-points-grid">
+                <div class="pain-item">
+                    <h3>La mente en blanco</h3>
+                    <p>Entiendes las series de TV sin subtítulos y sabes qué te están diciendo en tus viajes, pero cuando te toca responder, te bloqueas, no encuentras las palabras y terminas diciendo solo "Yes" o "No".</p>
+                    <a href="#levelup" class="btn btn-outline btn-small">Speak Easy Level Up es para tí</a>
+                </div>
+                
+                <div class="pain-item">
+                    <h3>El miedo a lo desconocido</h3>
+                    <p>Tienes ese “pendiente” del inglés desde hace mucho tiempo, pero te da terror empezar desde cero o crees que ya es "muy tarde" para aprender.</p>
+                    <a href="#core" class="btn btn-outline btn-small">Speak Easy Core ENGLISH es para tí</a>
+                </div>
+                
+                <div class="pain-item">
+                    <h3>Un paso para llegar a tu meta</h3>
+                    <p>Tienes un nivel alto y debes aprobar el OET para ejercer en el extranjero, pero no sabes cómo dominar la estructura específica del examen.</p>
+                    <a href="#clearpath" class="btn btn-outline btn-small">Speak Easy Clear Path OET es para tí</a>
+                </div>
             </div>
             
-            <div class="pain-item">
-                <h3>El miedo a lo desconocido</h3>
-                <p>Sientes que necesitas el idioma para crecer profesionalmente, pero tus bases son tan débiles que te da terror empezar o crees que ya es "muy tarde" para aprender.</p>
-                <a href="#core" class="btn btn-outline btn-small">Speak Easy Core ENGLISH es para tí</a>
-            </div>
-            
-            <div class="pain-item">
-                <h3>El camino a una nueva vida</h3>
-                <p>Tienes un nivel intermedio o alto y necesitas pasar el OET para ejercer en el extranjero, pero no sabes cómo dominar la estructura específica del examen.</p>
-                <a href="#clearpath" class="btn btn-outline btn-small">Speak Easy Clear Path OET es para tí</a>
-            </div>
-            
-            <p class="conclusion">No es que "seas malo para el inglés" o que te "falten habilidades". Es que no has tenido el acompañamiento y la metodología correctos. Aprender un idioma de adulto no debe ser un obstáculo, debe ser el mejor auto-regalo que te puedas dar.</p>
+            <p class="conclusion">No es que "seas malo para el inglés" o que te "falten habilidades". Es que no te has regalado la oportunidad de ser guiado bajo una metodología y un aprendizaje estructurado. Adquirir un idioma de adulto no debe ser un dolor de cabeza, debe ser el mejor <strong>auto-regalo🎁</strong> que te puedas dar.</p>
         </div>
     </section>
 
     <!-- [Sección 3: Lo que hacemos por ti] -->
     <section class="section-tight">
-        <h2>En Speak Easy no damos "clases de inglés".<br>Preparamos y te acompañamos en tu propio camino para recorrer el Mapa a tus sueños en inglés.</h2>
-        <p class="text-center subtitle" style="font-weight: 400; max-width: 800px; margin: 0 auto;">Aquí no vienes a memorizar listas de verbos genéricas. Vienes a <strong>apropiarte</strong> del idioma y poner en práctica tus conocimientos desde el día uno, guiado por profesionales.</p>
+        <h2>En Speak Easy no damos "clases de inglés" genéricas.<br>Preparamos el camino y te acompañamos para recorrerlo con un método equilibrado, donde acudimos a la gramática cuando es necesario, pero nos enfocamos en <strong><i> practicar, practicar y practicar</i></strong>.</h2>
+        <p class="text-center subtitle" style="font-weight: 400; max-width: 1000px; margin: 0 auto;">Aquí no vienes a memorizar listas de verbos irregulares. Vienes a <strong>apropiarte</strong> del idioma y poner en práctica tus conocimientos desde el día uno, guiado por profesionales.</p>
         
         <!-- Lista de beneficios -->
         <div class="solution-list-container">
@@ -185,21 +215,21 @@
                     <span class="solution-list-icon">🤝</span>
                     <div class="solution-list-text">
                         <strong>Espacio Seguro</strong>
-                        Nuestro salón virtual es una zona libre de juicios, donde nos divertimos y nos enfocamos en tí. Celebramos los errores porque son el puente a la fluidez.
+                        Nuestro salón virtual es una zona libre de juicios, donde nos divertimos y nos enfocamos en tí. Celebramos tus errores, porque son el puente a hacerlo mejor.
                     </div>
                 </li>
                 <li>
                     <span class="solution-list-icon">💡</span>
                     <div class="solution-list-text">
-                        <strong>Feedback Estratégico</strong>
-                        Te corregimos sin interrumpir tu flujo de pensamiento, dándote herramientas exactas para pulir tus debilidades. Cada estudiante es un mundo y así son las clases.
+                        <strong>Material Adaptado</strong>
+                        Cada estudiante es un mundo y así llevamos las clases. Utilizamos contenidos educativos de base y los adaptamos a ti. 
                     </div>
                 </li>
                 <li>
                     <span class="solution-list-icon">📅</span>
                     <div class="solution-list-text">
                         <strong>Flexibilidad Total</strong>
-                        El día a día está lleno de compromisos; familia, trabajo, <i></i>gym</i>, etc... por eso, tú eliges tus horarios de acuerdo a tu disponibilidad.
+                        El día a día está lleno de compromisos; familia, trabajo, <i>gym</i>, etc... por eso, tú eliges tus horarios de acuerdo a tu disponibilidad.
                     </div>
                 </li>
             </ul>
@@ -209,80 +239,83 @@
     <!-- [Sección 4: Nuestros Programas] -->
     <div class="programs">
         <section>
-            <h2 style="margin-bottom: 50px;">Elige el Mapa perfecto para lograr tus objetivos</h2>
+            <h2 style="margin-bottom: 50px;">Elige tu programa (tu Mapa) perfecto para lograr tus objetivos</h2>
             
-            <!-- Programa 1: Level Up -->
-            <div class="program-card" id="levelup">
-                <img src="LEVEL UP.png" alt="Speak Easy Level Up Logo" class="program-logo">
-                <p class="program-subtitle">Aquí vienes soltar la lengua, a ganar confianza y perder el miedo a hablar.</p>
-                <div class="program-details">
-                    <p><strong>¿Qué logras?:</strong> Este programa es 100% conversacional. Dejarás de traducir en tu cabeza, activarás el vocabulario que ya tienes pasivo (el que entiendes pero no usas) y ganarás la confianza para fluir en reuniones de trabajo o viajes sin quedarte en blanco.</p>
-                    
-                    <div class="check-list-grid">
-                        <div class="check-item">
-                            <span>✅</span> 
-                            <div>
-                                <span class="check-title">Para quién es:</span>
-                                Adultos que ya "saben inglés en su cabeza", entienden cuando les hablan y consumen contenido en inglés, pero se bloquean y no encuentran las palabras al momento de hablar.
+            <!-- Usando Grid en Desktop para colocar los 3 programas uno al lado del otro -->
+            <div class="programs-grid">
+                <!-- Programa 1: Level Up -->
+                <div class="program-card" id="levelup">
+                    <img src="LEVEL UP.png" alt="Speak Easy Level Up Logo" class="program-logo">
+                    <p class="program-subtitle">Aquí vienes soltar la lengua, a ganar confianza y perder el miedo a hablar.</p>
+                    <div class="program-details">
+                        <p><strong>¿Qué logras?:</strong> Este programa es 100% conversacional. Dejarás de traducir en tu cabeza, activarás el vocabulario que ya tienes pasivo (el que entiendes pero no usas) y ganarás la confianza para fluir en reuniones de trabajo o viajes sin quedarte en blanco.</p>
+                        
+                        <div class="check-list-grid">
+                            <div class="check-item">
+                                <span>✅</span> 
+                                <div>
+                                    <span class="check-title">Para quién es:</span>
+                                    Adultos que ya "saben inglés en su cabeza", entienden cuando les hablan y consumen contenido en inglés, pero se bloquean y no encuentran las palabras al momento de hablar.
+                                </div>
                             </div>
-                        </div>
-                        <div class="check-item">
-                            <span>❌</span> 
-                            <div>
-                                <span class="check-title">Para quién NO es:</span>
-                                Estudiantes principiantes que necesitan aprender gramática desde cero o personas buscando certificación de exámenes.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Programa 2: Core -->
-            <div class="program-card" id="core">
-                <img src="CORE.png" alt="Speak Easy Core Logo" class="program-logo">
-                <p class="program-subtitle">Construye tu inglés con bases de acero para el mundo profesional.</p>
-                <div class="program-details">
-                    <p><strong>¿Qué logras?:</strong> Aprender el idioma desde los fundamentos reales, integrando las 4 habilidades (Speaking, Listening, Reading, Writing). Construirás bases sólidas de gramática y vocabulario para que puedas usar tu inglés de manera correcta y estructurada en cualquier entorno.</p>
-                    
-                    <div class="check-list-grid">
-                        <div class="check-item">
-                            <span>✅</span> 
-                            <div>
-                                <span class="check-title">Para quién es:</span>
-                                Estudiantes principiantes (A1-A2) o personas que sienten que tienen muchos "huecos" en su aprendizaje y necesitan fundamentos, con una estructura completa desde la base.
-                            </div>
-                        </div>
-                        <div class="check-item">
-                            <span>❌</span> 
-                            <div>
-                                <span class="check-title">Para quién NO es:</span>
-                                Personas que ya hablan fluido y solo quieren perfeccionar su nivel de conversación.
+                            <div class="check-item">
+                                <span>❌</span> 
+                                <div>
+                                    <span class="check-title">Para quién NO es:</span>
+                                    Estudiantes principiantes que necesitan aprender gramática desde cero o personas buscando certificación de exámenes en inglés que incluyen <i>Writing y Reading</i>.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Programa 3: Clear Path -->
-            <div class="program-card" id="clearpath">
-                <img src="CLEAR PATH.png" alt="Speak Easy Clear Path Logo" class="program-logo">
-                <p class="program-subtitle">Preparación personalizada y estratégica exclusiva para el examen OET.</p>
-                <div class="program-details">
-                    <p><strong>¿Qué logras?:</strong> Dominar la estructura y criterios de evaluación exactos del Occupational English Test. Entrenamos con material OET auténtico y propio de Speak Easy, para asegurar el puntaje que necesitas para cumplir tus sueños en el extranjero.</p>
-                    
-                    <div class="check-list-grid">
-                        <div class="check-item">
-                            <span>✅</span> 
-                            <div>
-                                <span class="check-title">Para quién es:</span>
-                                Profesionales de la medicina y la salud que ya cuentan con un nivel de inglés B1 o superior, y que van a presentar su examen OET en los próximos 3 a 6 meses.
+                <!-- Programa 2: Core -->
+                <div class="program-card" id="core">
+                    <img src="CORE.png" alt="Speak Easy Core Logo" class="program-logo">
+                    <p class="program-subtitle">Construye tu inglés con bases de acero, eliminando los errores de principiantes más comunes.</p>
+                    <div class="program-details">
+                        <p><strong>¿Qué logras?:</strong> Aprender el idioma desde los fundamentos reales, integrando las 4 habilidades (Speaking, Listening, Reading, Writing). Construirás bases sólidas de gramática y vocabulario para que puedas usar tu inglés de manera correcta y estructurada en cualquier entorno.</p>
+                        
+                        <div class="check-list-grid">
+                            <div class="check-item">
+                                <span>✅</span> 
+                                <div>
+                                    <span class="check-title">Para quién es:</span>
+                                    Estudiantes principiantes (A1-A2) o personas que sienten que tienen muchos "huecos" en su aprendizaje y necesitan fundamentos con una estructura completa desde la base.
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <span>❌</span> 
+                                <div>
+                                    <span class="check-title">Para quién NO es:</span>
+                                    Personas que ya hablan fluido y solo quieren perfeccionar su nivel de conversación.
+                                </div>
                             </div>
                         </div>
-                        <div class="check-item">
-                            <span>❌</span> 
-                            <div>
-                                <span class="check-title">Para quién NO es:</span>
-                                Profesionales de otras áreas (ingenieros, abogados) o personal de salud que aún está en nivel principiante de inglés.
+                    </div>
+                </div>
+
+                <!-- Programa 3: Clear Path -->
+                <div class="program-card" id="clearpath">
+                    <img src="CLEAR PATH.png" alt="Speak Easy Clear Path Logo" class="program-logo">
+                    <p class="program-subtitle">Preparación personalizada y estratégica exclusiva para el examen OET.</p>
+                    <div class="program-details">
+                        <p><strong>¿Qué logras?:</strong> Dominar la estructura y criterios de evaluación exactos del Occupational English Test. Entrenamos con material OET auténtico y propio de Speak Easy, para asegurar el puntaje que necesitas para cumplir tus sueños en el extranjero.</p>
+                        
+                        <div class="check-list-grid">
+                            <div class="check-item">
+                                <span>✅</span> 
+                                <div>
+                                    <span class="check-title">Para quién es:</span>
+                                    Profesionales de la salud que ya cuentan con un nivel de inglés B1 o superior, y que van a presentar su examen OET en los próximos 3 a 6 meses.
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <span>❌</span> 
+                                <div>
+                                    <span class="check-title">Para quién NO es:</span>
+                                    Profesionales de otras áreas (ingenieros, abogados) o personal de salud que aún está en nivel principiante de inglés.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -295,7 +328,7 @@
     <section class="assessment">
         <h2>Tu viaje empieza con tu Mapa Speak Easy 🗺️</h2>
         <div class="assessment-box">
-            <p style="font-size: 18px; margin-bottom: 20px;">Antes de iniciar cualquier programa en Speak Easy, necesitamos saber exactamente dónde estás parado. No hacemos un examen genérico; tenemos una conversación profunda.</p>
+            <p style="font-size: 18px; margin-bottom: 20px;">Antes de iniciar cualquier programa en Speak Easy, necesitamos saber exactamente dónde estás con el idioma.</p>
             <p style="font-weight: 700; color: var(--gris-oscuro); font-size: 18px;">A través de nuestro Assessment de 50 minutos en vivo:</p>
             <ul class="assessment-list">
                 <li>Descubrimos tu nivel real actual y tus bloqueos frente a tus objetivos.</li>
@@ -311,7 +344,7 @@
         <h2>Tus guías en este viaje 🧭</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p class="subtitle" style="margin-bottom: 30px;">Detrás de Speak Easy, estamos profesionales apasionados por la enseñanza de lenguas. Nuestro objetivo es liberar tu inglés interior y darte todas las herramientas que necesitas para alcanzar tus objetivos.</p>
+                <p class="subtitle" style="margin-bottom: 30px; max-width: 100%;">Detrás de Speak Easy, estamos profesionales apasionados por la enseñanza de lenguas. Nuestro objetivo es liberar tu inglés interior y darte todas las herramientas que necesitas para alcanzar tus objetivos.</p>
                 
                 <h3>🏆 Calidad Internacional</h3>
                 <p>Somos profesionales en lenguas, certificados oficialmente por el OET con el Teaching Trainer Award.</p>
@@ -329,7 +362,7 @@
     </section>
 
     <!-- [Sección 7: Testimonios] -->
-    <section style="background-color: var(--gris-claro); border-radius: 30px; padding-bottom: 80px; margin-bottom: 40px;">
+    <section style="background-color: var(--gris-claro); border-radius: 30px; padding-bottom: 80px; margin-bottom: 40px; margin-top: 40px;">
         <h2 style="padding-top: 40px;">Historias de éxito de quienes ya liberaron su inglés</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card">
@@ -340,14 +373,15 @@
             
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Empezar de cero de adulto da miedo, pero en el programa Core me tuvieron mucha paciencia. Me dieron las bases exactas que necesitaba sin enredarme con libros aburridos. Ya puedo escribir correos y tener conversaciones básicas con seguridad."</p>
-                <p class="testimonial-author">[Nombre, Profesión]</p>
+                <p class="testimonial-text">"Recomendaría el curso porque cumple el objetivo de prepararse específicamente para el examen (OET). Mi experiencia fue muy buena y me ayudó a cumplir mi objetivo. Resalto la calidad docente y humana de los profesores."</p>
+                <p class="testimonial-author">Dr. Felipe Lopera. Médico Radiólogo — Colombia</p>
             </div>
             
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"El Clear Path fue la clave para pasar mi OET. El feedback en las Case Notes y los simulacros me dieron la confianza exacta para el día del examen. Hoy ya estoy planeando mi viaje."</p>
-                <p class="testimonial-author">[Nombre, Médico]</p>
+                <p class="testimonial-text">" Lo que más me ha gustado es la forma progresiva en la que ha ido avanzando en los temas y cómo los ha ido enlazando... Siento que así facilita mi comprensión y aprendizaje. </p>
+                <p class="testimonial-author"> Dra. Diana López Médico Radiólogo — Colombia
+</p>
             </div>
         </div>
     </section>
