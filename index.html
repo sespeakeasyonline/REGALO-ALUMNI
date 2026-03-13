@@ -61,18 +61,18 @@
         .solution-list-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
         .solution-list-text strong { color: var(--celeste); font-family: 'Quicksand', sans-serif; font-size: 19px; display: block; margin-bottom: 5px; }
 
-        /* Programs Section - Modificado para evitar desborde horizontal */
-        .programs { background-color: var(--gris-claro); padding: 60px 40px; width: 100%; box-sizing: border-box; } /* Ajuste del padding horizontal a 40px igual que las sections */
+        /* Programs Section */
+        .programs { background-color: var(--gris-claro); padding: 60px 40px; width: 100%; box-sizing: border-box; } 
         .programs section { padding: 0; max-width: 1400px; width: 100%; box-sizing: border-box; } 
-        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%; } /* Gap reducido levemente para dar más margen interno */
+        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 30px; width: 100%; } 
         
         @media (min-width: 1024px) {
-            .programs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; } /* minmax(0, 1fr) obliga a que las cajas respeten el ancho máximo */
+            .programs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; } 
             .program-card { margin-bottom: 0; }
             .check-list-grid { grid-template-columns: 1fr; gap: 20px; }
         }
         
-        .program-card { background-color: var(--blanco); padding: 40px; border-radius: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; text-align: center; transition: transform 0.3s ease; height: 100%; width: 100%; box-sizing: border-box; overflow: hidden; } /* Overflow hidden y box-sizing para seguridad */
+        .program-card { background-color: var(--blanco); padding: 40px; border-radius: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; text-align: center; transition: transform 0.3s ease; height: 100%; width: 100%; box-sizing: border-box; overflow: hidden; } 
         .program-card:last-child { margin-bottom: 0; }
         .program-card:hover { transform: translateY(-5px); }
         
@@ -93,7 +93,7 @@
         .assessment-list li { margin-bottom: 20px; list-style-type: none; position: relative; padding-left: 35px; font-weight: 600; }
         .assessment-list li::before { content: '✨'; position: absolute; left: 0; }
 
-        /* About Us Section */
+        /* About Us Section - Manteniendo el layout solicitado del 60% / 35% */
         .about-grid { display: grid; grid-template-columns: 60% 35%; gap: 5%; align-items: center; max-width: 1400px; margin: 0 auto; justify-content: space-between; }
         .about-text { text-align: left; }
         .about-text h3 { color: var(--naranja); font-family: 'Quicksand', sans-serif; margin-bottom: 10px; font-size: 22px; font-weight: 700; }
@@ -131,10 +131,12 @@
             .pain-item:last-child { border-bottom: none; padding-bottom: 0; }
             .conclusion { font-size: 28px; } 
             
-            .programs { padding: 50px 20px; } /* Ajuste del padding lateral para móvil en programas */
+            .programs { padding: 50px 20px; } 
             .check-list-grid { grid-template-columns: 1fr; gap: 20px; }
             
+            /* Ajuste de About Grid para móvil (1 columna) */
             .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            
             .btn { width: 100%; }
             .footer-hook { border-radius: 0; padding: 50px 20px; }
             .solution-list { grid-template-columns: 1fr; }
@@ -163,7 +165,6 @@
     <section class="section-tight">
         <h2>¿Te suena familiar alguna de estas situaciones?</h2>
         <div class="pain-points">
-            <!-- Usando CSS Grid para Desktop en esta sección (3 columnas) -->
             <div class="pain-points-grid">
                 <div class="pain-item">
                     <h3>La mente en blanco</h3>
@@ -193,7 +194,6 @@
         <h2>En Speak Easy no damos "clases de inglés" genéricas.<br>Preparamos el camino y te acompañamos para recorrerlo con un método equilibrado, donde acudimos a la gramática cuando es necesario, pero nos enfocamos en <strong><i> practicar, practicar y practicar</i></strong>.</h2>
         <p class="text-center subtitle" style="font-weight: 400; max-width: 1000px; margin: 0 auto;">Aquí no vienes a memorizar listas de verbos irregulares. Vienes a <strong>apropiarte</strong> del idioma y poner en práctica tus conocimientos desde el día uno, guiado por profesionales.</p>
         
-        <!-- Lista de beneficios -->
         <div class="solution-list-container">
             <ul class="solution-list">
                 <li>
@@ -233,9 +233,7 @@
         <section>
             <h2 style="margin-bottom: 50px;">Elige tu programa (tu Mapa) perfecto para lograr tus objetivos</h2>
             
-            <!-- Usando Grid en Desktop para colocar los 3 programas uno al lado del otro -->
             <div class="programs-grid">
-                
                 <!-- Programa 1: Level Up -->
                 <div class="program-card" id="levelup">
                     <div class="program-intro">
@@ -313,7 +311,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </section>
     </div>
@@ -336,8 +333,10 @@
     <!-- [Sección 6: Quiénes Somos] -->
     <section>
         <h2>Tus guías en este viaje 🧭</h2>
+        <!-- Texto alineado debajo del título, centrado y a lo ancho -->
         <p class="subtitle" style="margin-bottom: 40px; text-align: center; max-width: 1200px; margin-left: auto; margin-right: auto;">Detrás de Speak Easy, estamos profesionales apasionados por la enseñanza de lenguas. Nuestro objetivo es liberar tu inglés interior y darte todas las herramientas que necesitas para alcanzar tus objetivos.</p>
         
+        <!-- Grid para los items (60%) y la foto (35%) -->
         <div class="about-grid">
             <div class="about-text">
                 <h3>🏆 Calidad Internacional</h3>
