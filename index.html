@@ -54,7 +54,7 @@
         .pain-item h3 { font-family: 'Quicksand', sans-serif; color: var(--naranja); font-size: 24px; margin-bottom: 10px; font-weight: 700; }
         .conclusion { font-size: 20px; font-weight: 700; text-align: center; margin-top: 40px; color: var(--celeste); }
 
-        /* NUEVA Solution Section (Lista en lugar de Tarjetas) */
+        /* Solution Section (Lista) */
         .solution-list-container { max-width: 800px; margin: 40px auto 0; background-color: var(--blanco); border-radius: 20px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
         .solution-list { list-style: none; }
         .solution-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; font-size: 17px; }
@@ -62,9 +62,11 @@
         .solution-list-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
         .solution-list-text strong { color: var(--celeste); font-family: 'Quicksand', sans-serif; font-size: 19px; display: block; margin-bottom: 5px; }
 
-        /* Programs Section */
-        .programs { background-color: var(--gris-claro); padding: 80px 20px; }
+        /* Programs Section - Corregido el padding inferior para quitar espacio blanco */
+        .programs { background-color: var(--gris-claro); padding: 60px 20px 20px 20px; }
+        .programs section { padding-bottom: 0; } /* Quitado padding inferior de la sección interna */
         .program-card { background-color: var(--blanco); padding: 50px; border-radius: 25px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.3s ease; }
+        .program-card:last-child { margin-bottom: 0; } /* Quitado el margen inferior a la última tarjeta */
         .program-card:hover { transform: translateY(-5px); }
         .program-logo { max-width: 250px; height: auto; margin-bottom: 20px; }
         .program-subtitle { font-size: 20px; font-weight: 700; color: var(--naranja); margin-bottom: 25px; font-family: 'Quicksand', sans-serif; }
@@ -77,8 +79,8 @@
         .check-item span { font-size: 20px; flex-shrink: 0; }
         .check-title { display: block; font-weight: 800; color: var(--gris-oscuro); margin-bottom: 5px; }
 
-        /* Assessment Section */
-        .assessment { text-align: center; }
+        /* Assessment Section - Corregido padding superior */
+        .assessment { text-align: center; padding-top: 40px; }
         .assessment-box { background-color: var(--blanco); padding: 50px; border-radius: 25px; border: 3px dashed var(--celeste); max-width: 800px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(140,211,209,0.1); }
         .assessment-list { text-align: left; margin: 30px auto; max-width: 600px; font-size: 18px; }
         .assessment-list li { margin-bottom: 20px; list-style-type: none; position: relative; padding-left: 35px; font-weight: 600; }
@@ -125,16 +127,15 @@
 
     <!-- Header -->
     <header>
-        <img src="" alt="SPEAK EASY.png" class="logo-img">
+        <img src="SPEAK EASY.png" alt="Speak Easy Logo" class="logo-img">
     </header>
 
     <!-- [Sección 1: Hero] -->
     <section class="hero">
         <div class="hero-content">
             <p class="pre-title">El mundo está lleno de oportunidades. Que el idioma no sea lo que te detenga.</p>
-            <h1><span class="highlight">¡Libera tu inglés interior!</span></h1>
-                 <h2></span> Pierde el miedo, aprópiate del idioma y sé tú mismo al hablar.</h2>
-            <p class="subtitle">Programas de inglés 100% personalizados para profesionales y adultos. Deja de estudiar para pasar exámenes de colegio y empieza a prepararte para la vida real, tu carrera y tus sueños.</p>
+            <h1><span class="highlight">Llegó el momento de liberar tu inglés interior:</span> Pierde el miedo, aprópiate del idioma y sé tú mismo al hablar.</h1>
+            <p class="subtitle">Programas de inglés 100% personalizados para profesionales y adultos. Deja de estudiar con videos dispersos online sin estructura y empieza a prepararte para la vida real, progresar en tu carrera y cumplir tus sueños.</p>
             <a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Estoy <i>ready</i> para cumplir mis sueños</a>
         </div>
     </section>
@@ -145,60 +146,60 @@
         <div class="pain-points">
             <div class="pain-item">
                 <h3>El nudo en la garganta</h3>
-                <p>Entiendes las series de TV sin subtítulos y sabes qué te están diciendo, pero cuando te toca responder, te bloqueas, no encuentras las palabras y terminas diciendo solo "Yes" o "No".</p>
-                <a href="#levelup" class="btn btn-outline btn-small">Ver info de Speak Easy Level Up</a>
+                <p>Entiendes las series de TV sin subtítulos y sabes qué te están diciendo en tus viajes, pero cuando te toca responder, te bloqueas, no encuentras las palabras y terminas diciendo solo "Yes" o "No".</p>
+                <a href="#levelup" class="btn btn-outline btn-small">Speak Easy Level Up es para tí</a>
             </div>
             
             <div class="pain-item">
-                <h3>El inicio frustrante</h3>
+                <h3>El miedo a lo desconocido</h3>
                 <p>Sientes que necesitas el idioma para crecer profesionalmente, pero tus bases son tan débiles que te da terror empezar o crees que ya es "muy tarde" para aprender.</p>
-                <a href="#core" class="btn btn-outline btn-small">Ver info de Speak Easy Core</a>
+                <a href="#core" class="btn btn-outline btn-small">Speak Easy Core ENGLISH es para tí</a>
             </div>
             
             <div class="pain-item">
-                <h3>La barrera profesional médica</h3>
-                <p>Tienes un nivel intermedio o alto, pero necesitas pasar el OET para ejercer en el extranjero y no sabes cómo dominar la estructura específica del examen.</p>
-                <a href="#clearpath" class="btn btn-outline btn-small">Ver info de Speak Easy Clear Path</a>
+                <h3>El camino a una nueva vida</h3>
+                <p>Tienes un nivel intermedio o alto y necesitas pasar el OET para ejercer en el extranjero, pero no sabes cómo dominar la estructura específica del examen.</p>
+                <a href="#clearpath" class="btn btn-outline btn-small">Speak Easy Clear Path OET es para tí</a>
             </div>
             
-            <p class="conclusion">No es que "seas malo para el inglés". Es que no has tenido el acompañamiento y metodología correctos. Aprender un idioma de adulto no debe ser una tortura, debe ser el mejor auto-regalo que te puedas dar.</p>
+            <p class="conclusion">No es que "seas malo para el inglés" o que te "falten habilidades". Es que no has tenido el acompañamiento y la metodología correctos. Aprender un idioma de adulto no debe ser un obstáculo, debe ser el mejor auto-regalo que te puedas dar.</p>
         </div>
     </section>
 
     <!-- [Sección 3: Lo que hacemos por ti] -->
     <section class="section-tight">
-        <h2>En Speak Easy no damos "clases de inglés".<br>Transformamos tu relación con el idioma.</h2>
-        <p class="text-center subtitle" style="font-weight: 400; max-width: 800px; margin: 0 auto;">Aquí no vienes a memorizar listas de verbos genéricas. Vienes a <strong>usar</strong> el idioma y poner en práctica tus conocimientos desde el día uno, guiado por profesionales.</p>
+        <h2>En Speak Easy no damos "clases de inglés".<br>Preparamos y te acompañamos en tu propio camino para recorrer el Mapa a tus sueños en inglés.</h2>
+        <p class="text-center subtitle" style="font-weight: 400; max-width: 800px; margin: 0 auto;">Aquí no vienes a memorizar listas de verbos genéricas. Vienes a <strong>apropiarte</strong> del idioma y poner en práctica tus conocimientos desde el día uno, guiado por profesionales.</p>
         
-        <!-- Lista de beneficios en lugar de tarjetas -->
+        <!-- Lista de beneficios -->
         <div class="solution-list-container">
             <ul class="solution-list">
                 <li>
                     <span class="solution-list-icon">🎯</span>
                     <div class="solution-list-text">
                         <strong>100% Personalización</strong>
-                        Tu trabajo, tus habilidades y tus metas son parte esencial del contenido de la clase.
+                        Tu trabajo, tus habilidades y tus metas personales son parte esencial del contenido de la clase.
                     </div>
                 </li>
                 <li>
                     <span class="solution-list-icon">🤝</span>
                     <div class="solution-list-text">
-                        <strong>Ambiente Seguro</strong>
-                        Nuestro salón virtual es una zona libre de juicios. Celebramos los errores como puente a la fluidez.
+                        <strong>Espacio Seguro</strong>
+                        Nuestro salón virtual es una zona libre de juicios, donde nos divertimos y nos enfocamos en tí. Celebramos los errores porque son el puente a la fluidez.
                     </div>
                 </li>
                 <li>
                     <span class="solution-list-icon">💡</span>
                     <div class="solution-list-text">
                         <strong>Feedback Estratégico</strong>
-                        Te corregimos sin interrumpir tu flujo de pensamiento, dándote herramientas exactas para pulir tus debilidades.
+                        Te corregimos sin interrumpir tu flujo de pensamiento, dándote herramientas exactas para pulir tus debilidades. Cada estudiante es un mundo y así son las clases.
                     </div>
                 </li>
                 <li>
                     <span class="solution-list-icon">📅</span>
                     <div class="solution-list-text">
                         <strong>Flexibilidad Total</strong>
-                        El día a día está lleno de compromisos, por eso tú eliges tus horarios de acuerdo a tu disponibilidad.
+                        El día a día está lleno de compromisos; familia, trabajo, <i></i>gym</i>, etc... por eso, tú eliges tus horarios de acuerdo a tu disponibilidad.
                     </div>
                 </li>
             </ul>
@@ -207,13 +208,13 @@
 
     <!-- [Sección 4: Nuestros Programas] -->
     <div class="programs">
-        <section style="padding: 0;">
-            <h2 style="margin-bottom: 50px;">Elige la ruta perfecta para tu objetivo</h2>
+        <section>
+            <h2 style="margin-bottom: 50px;">Elige el Mapa perfecto para lograr tus objetivos</h2>
             
             <!-- Programa 1: Level Up -->
             <div class="program-card" id="levelup">
-                <img src="" alt="Speak Easy Level Up Logo" class="program-logo">
-                <p class="program-subtitle">Para soltar la lengua, ganar confianza y perder el miedo a hablar.</p>
+                <img src="LEVEL UP.png" alt="Speak Easy Level Up Logo" class="program-logo">
+                <p class="program-subtitle">Aquí vienes soltar la lengua, a ganar confianza y perder el miedo a hablar.</p>
                 <div class="program-details">
                     <p><strong>¿Qué logras?:</strong> Este programa es 100% conversacional. Dejarás de traducir en tu cabeza, activarás el vocabulario que ya tienes pasivo (el que entiendes pero no usas) y ganarás la confianza para fluir en reuniones de trabajo o viajes sin quedarte en blanco.</p>
                     
@@ -238,17 +239,17 @@
 
             <!-- Programa 2: Core -->
             <div class="program-card" id="core">
-                <img src="" alt="Speak Easy Core Logo" class="program-logo">
-                <p class="program-subtitle">Construye tu inglés con bases de acero para el mundo académico y profesional.</p>
+                <img src="CORE.png" alt="Speak Easy Core Logo" class="program-logo">
+                <p class="program-subtitle">Construye tu inglés con bases de acero para el mundo profesional.</p>
                 <div class="program-details">
-                    <p><strong>¿Qué logras?:</strong> Aprender el idioma desde los fundamentos reales, integrando las 4 habilidades (Speaking, Listening, Reading, Writing). Construirás bases sólidas de gramática y vocabulario para que puedas usar tu inglés de manera correcta y estructurada en entornos profesionales o exámenes académicos.</p>
+                    <p><strong>¿Qué logras?:</strong> Aprender el idioma desde los fundamentos reales, integrando las 4 habilidades (Speaking, Listening, Reading, Writing). Construirás bases sólidas de gramática y vocabulario para que puedas usar tu inglés de manera correcta y estructurada en cualquier entorno.</p>
                     
                     <div class="check-list-grid">
                         <div class="check-item">
                             <span>✅</span> 
                             <div>
                                 <span class="check-title">Para quién es:</span>
-                                Estudiantes principiantes (A1-A2) o personas que sienten que tienen muchos "huecos" en su aprendizaje y necesitan una estructura completa y paciente desde la base.
+                                Estudiantes principiantes (A1-A2) o personas que sienten que tienen muchos "huecos" en su aprendizaje y necesitan fundamentos, con una estructura completa desde la base.
                             </div>
                         </div>
                         <div class="check-item">
@@ -264,10 +265,10 @@
 
             <!-- Programa 3: Clear Path -->
             <div class="program-card" id="clearpath">
-                <img src="" alt="Speak Easy Clear Path Logo" class="program-logo">
-                <p class="program-subtitle">Preparación élite y estratégica exclusiva para el examen OET.</p>
+                <img src="CLEAR PATH.png" alt="Speak Easy Clear Path Logo" class="program-logo">
+                <p class="program-subtitle">Preparación personalizada y estratégica exclusiva para el examen OET.</p>
                 <div class="program-details">
-                    <p><strong>¿Qué logras?:</strong> Domina la estructura y criterios de evaluación exactos del Occupational English Test. Entrenamos con material OET auténtico para asegurar el puntaje que necesitas para cumplir tus sueños en el extranjero.</p>
+                    <p><strong>¿Qué logras?:</strong> Dominar la estructura y criterios de evaluación exactos del Occupational English Test. Entrenamos con material OET auténtico y propio de Speak Easy, para asegurar el puntaje que necesitas para cumplir tus sueños en el extranjero.</p>
                     
                     <div class="check-list-grid">
                         <div class="check-item">
@@ -297,9 +298,9 @@
             <p style="font-size: 18px; margin-bottom: 20px;">Antes de iniciar cualquier programa en Speak Easy, necesitamos saber exactamente dónde estás parado. No hacemos un examen genérico; tenemos una conversación profunda.</p>
             <p style="font-weight: 700; color: var(--gris-oscuro); font-size: 18px;">A través de nuestro Assessment de 50 minutos en vivo:</p>
             <ul class="assessment-list">
-                <li>Descubrimos tu nivel real actual y tus bloqueos.</li>
-                <li>Definimos cuál de nuestros 3 programas es tu ruta ideal hacia tu destino.</li>
-                <li><strong>Te entregamos tu Mapa Speak Easy:</strong> Tu programa de estudios personalizado. A partir de ahí, nosotros te acompañamos a recorrerlo de principio a fin.</li>
+                <li>Descubrimos tu nivel real actual y tus bloqueos frente a tus objetivos.</li>
+                <li>Conocemos tus metas y definimos cuál de nuestros 3 programas es tu Mapa ideal hacia tu destino.</li>
+                <li><strong>Te entregamos tu Mapa Speak Easy:</strong> Tu programa de estudios inicial y personalizado. A partir de ahí, nosotros te acompañamos a recorrerlo de principio a fin.</li>
             </ul>
         </div>
         <a href="https://wa.me/message/XO4SJBGKCGKRI1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Quiero agendar mi Assessment ahora</a>
@@ -310,19 +311,19 @@
         <h2>Tus guías en este viaje 🧭</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p class="subtitle" style="margin-bottom: 30px;">Detrás de Speak Easy hay profesionales apasionados por la enseñanza de lenguas. Nos emocionamos contigo con cada logro y nos adaptamos siempre a lo que tu necesitas.</p>
+                <p class="subtitle" style="margin-bottom: 30px;">Detrás de Speak Easy, estamos profesionales apasionados por la enseñanza de lenguas. Nuestro objetivo es liberar tu inglés interior y darte todas las herramientas que necesitas para alcanzar tus objetivos.</p>
                 
                 <h3>🏆 Calidad Internacional</h3>
                 <p>Somos profesionales en lenguas, certificados oficialmente por el OET con el Teaching Trainer Award.</p>
                 
                 <h3>👩‍🏫 Experiencia Real</h3>
-                <p>Llevamos más de 5 años acompañando a cientos de personas a derribar la barrera del idioma y cumplir sus objetivos, desde perder el miedo a hablar hasta lograr obtener su puesto soñado.</p>
+                <p>Llevamos más de 5 años acompañando a cientos de personas a derribar la barrera del idioma y cumplir sus objetivos, desde perder el miedo a conversar en un viaje, hasta lograr obtener su puesto soñado.</p>
                 
                 <h3>❤️ Nuestra Filosofía</h3>
-                <p>Creemos que aprender un idioma debe ser empoderador, estructurado y profundamente humano.</p>
+                <p>Creemos que apropiarse de un idioma debe ser empoderador, estructurado y profundamente humano.</p>
             </div>
             <div>
-                <img src="" alt="Profesora Speak Easy" class="about-image">
+                <img src="FOTO DIANA.png" alt="Profesora Speak Easy" class="about-image">
             </div>
         </div>
     </section>
